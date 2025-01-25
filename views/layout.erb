@@ -6,17 +6,18 @@
   <style>
     .navbar {
       display: flex;
-      justify-content: space-between;
+      justify-content: space-around;
     }
   </style>
 </head>
 
 <body>
   <div class ="navbar">
-    <div><a href="/dice/2/6">Roll two 6-sided dice</a></div>
-    <div><a href="/dice/2/10">Roll two 10-sided dice</a></div>
-    <div><a href="/dice/1/20">Roll one 20-sided dice</a></div>  
-    <div><a href="/dice/5/4">Roll five 4-sided dice</a></div>  
+    <div><a href="/dice/2/6">2d6</a></div>
+    <div><a href="/dice/2/10">2d10</a></div>
+    <div><a href="/dice/1/20">1d20</a></div>  
+    <div><a href="/dice/5/4">5d4</a></div>  
+    <div><a href="/dice/100/6">100d6</a></div>
   </div>
 
   <%= yield %>
