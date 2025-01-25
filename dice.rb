@@ -35,11 +35,10 @@ end
 get("/dice/1/20") do
   first_die = rand(1..20)
 
-  outcome = "you rolled #{first_die}"
+  @outcome = "you rolled #{first_die}"
 
-  "<h1>1d20</h1>
-  <p>#{outcome}</p>
-  <p><a href=\"/\"> Return to homepage</a></p>"
+  erb(:one_twenty)
+
 end
 
 get("/dice/5/4") do
@@ -50,9 +49,19 @@ get("/dice/5/4") do
   fifth_die = rand(1..4)
   sum = first_die + second_die + third_die + fourth_die + fifth_die
 
-  outcome = "you rolled a #{first_die}, a #{second_die}, a #{third_die}, a #{fourth_die}, and a #{fifth_die}, with a total of #{sum}"
+  @outcome = "you rolled a #{first_die}, a #{second_die}, a #{third_die}, a #{fourth_die}, and a #{fifth_die}, with a total of #{sum}"
 
-  "<h1>5d4</h1>
-  <p>#{outcome}</p>
-  <p><a href=\"/\"> Return to homepage</a></p>"
+  erb(:five_four)
 end
+
+get("/dice/100/6") do 
+  @rolls = []
+
+  100.times do 
+    die = rand(1..6)
+    @rolls.push(die)
+  end
+
+  erb(:onehundred_six)
+end
+    
